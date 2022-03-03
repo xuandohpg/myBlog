@@ -1,0 +1,100 @@
+
+<div id="ads">
+  <div class="container py-3">
+    <div class="row">
+      <div class="col-md-12">
+        <ng-container *ngFor="let item of listBanner">
+          <a href="{{item.link}}" target="_blank">
+            <img class="img-fluid" src="{{item.link_image}}">
+          </a>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wp-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-between">
+        <div class="content d-flex justify-content-between flex-wrap">
+          <div class="content-left">
+            <div class="left-top1">
+              <div class="post" *ngFor="let item of listTopLeft">
+                <a [routerLink]="['chi-tiet-bai-viet',item.id]">
+                  <img src="{{item.thumb}}"> </a>
+                <a class="title" [routerLink]="['chi-tiet-bai-viet',item.id]">{{item.title}}
+                </a>
+              </div>
+            </div>
+
+            <div class="left-top2">
+              <ul class="list-post">
+                <li *ngFor="let item of listTopLeft1">
+                  <a [routerLink]="['chi-tiet-bai-viet',item.id]" class="thumb">
+                    <img src="{{item.thumb}}">
+                  </a>
+                  <a [routerLink]="['chi-tiet-bai-viet',item.id]">{{item.title}}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="content-right">
+            <div class="right-top1">
+              <div class="post" *ngFor="let item of listTopRight">
+                <a [routerLink]="['chi-tiet-bai-viet',item.id]">
+                  <img src="{{item.thumb}}"></a>
+                <a [routerLink]="['chi-tiet-bai-viet',item.id]"><h5>{{item.title}}</h5></a>
+              </div>
+            </div>
+            <div class="notable-article">
+              <h3>
+                <a href="">Bài viết đáng chú ý</a>
+                <a href=""><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+              </h3>
+              <ul>
+                <li *ngFor="let item of listTopRight1">
+                  <a [routerLink]="['chi-tiet-bai-viet',item.id]" class="thumb">
+                    <img src="{{item.thumb}}"></a>
+                  <a [routerLink]="['chi-tiet-bai-viet',item.id]">{{item.title}}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="game">
+            <ul class="menu-game" id="menu-game">
+              <li *ngFor="let item of listCategoryGame;let i=index" (click)="onClick(item.id)">
+                <a href="javascript:void(0)" [ngClass]="{' active': isIdActive===item.id}">{{item.name}}</a>
+              </li>
+            </ul>
+            <ul class="list-game d-flex" id="style-1">
+              <li *ngFor="let item of dsGame;let i=index">
+                <a href="{{item.link}}" target="_blank"> <img src="{{item.image}}"></a>
+                <a href="{{item.link}}" target="_blank" class="title-game">{{item.name}}</a>
+              </li>
+            </ul>
+          </div>
+          <div class="new-post">
+            <div class="title">
+              <p>mới câp nhập</p>
+            </div>
+            <ul class="list-new-post">
+              <li *ngFor="let item of listNewsPost">
+                <a [routerLink]="['chi-tiet-bai-viet',item.id]" class="thumb">
+                  <img src="{{item.thumb}}"></a>
+                <div class="info-post">
+                  <a [routerLink]="['chi-tiet-bai-viet',item.id]" class="title">{{item.title}}</a>
+                  <p class="auth">{{item.auth}}</p>
+                  <p class="date-time">{{item.dateTime}}</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <app-sidebar></app-sidebar>
+      </div>
+    </div>
+  </div>
+</div>

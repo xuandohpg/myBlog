@@ -1,0 +1,37 @@
+<div id="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="share-top">
+          <li *ngFor="let item of listSocialNetwork">
+            <a [href]="item.link" [innerHTML]="item.name" target="_blank"></a>
+          </li>
+        </ul>
+        <ul class="menu">
+          <li class="logo">
+            <a routerLink="/">
+              <img src="{{logo}}">
+            </a>
+          </li>
+          <li class="normal" *ngFor="let item of listMainMenu">
+            <a routerLink="{{item.slug}}">{{item.name}}</a>
+          </li>
+
+          <li class="search">
+            <input type="text" placeholder="Tìm kiếm...">
+            <a class="icon-search" href=""><i class="fa fa-search" aria-hidden="true"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="menu_news">
+          <li *ngFor="let item of listNewsMenu">
+            <a routerLink="{{item.slug}}" [innerHTML]="item.name"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

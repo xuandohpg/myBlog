@@ -1,0 +1,49 @@
+<div class="wp-content pt-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-between">
+        <div class="main-content">
+          <div class="d-flex justify-content-between">
+            <ng-container *ngFor="let item of listTopPost;let i=index">
+              <div class="content-left" *ngIf="i==0">
+                <a routerLink="/chi-tiet-bai-viet/{{item.id}}">
+                  <img src="{{item.thumb}}">
+                </a>
+                <a routerLink="/chi-tiet-bai-viet/{{item.id}}" class="title">{{item.title}}</a>
+              </div>
+              <div class="content-right" *ngIf="i==1">
+                <a routerLink="/chi-tiet-bai-viet/{{item.id}}">
+                  <img src="{{item.thumb}}">
+                </a>
+                <a routerLink="/chi-tiet-bai-viet/{{item.id}}" class="title">{{item.title}}</a>
+              </div>
+            </ng-container>
+          </div>
+          <!--------------------------danh sach bai dang --------------------------------------------->
+          <div class="new-post pt-3">
+            <ul class="list-new-post">
+              <li *ngFor="let item of listPost">
+                <a [routerLink]="['/chi-tiet-bai-viet',item.id]" class="thumb">
+                  <img src="{{item.thumb}}"></a>
+                <div class="info-post">
+                  <a [routerLink]="['/chi-tiet-bai-viet',item.id]" class="title">{{item.title}}</a>
+                  <p class="auth">{{item.auth}}</p>
+                  <p class="date-time">{{item.dateTime}}</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--------------------------------------phan sidebar---------------------->
+        <div class="sidebar">
+          <app-sidebar></app-sidebar>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

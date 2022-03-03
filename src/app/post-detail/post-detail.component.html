@@ -1,0 +1,30 @@
+<div class="wp-content py-4 post-detail">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-between">
+        <div class="main-content">
+<!--          <nav aria-label="breadcrumb">-->
+<!--            <ol class="breadcrumb">-->
+<!--              <li class="breadcrumb-item">GAMEK.vn</li>-->
+<!--            </ol>-->
+<!--          </nav>-->
+
+          <h1 class="title">
+            {{title}}
+          </h1>
+          <div class="auth">
+          <p>{{auth}} <span class="dateTime"> - {{dateTime}}</span></p>
+          </div>
+          <div class="content" [innerHTML]="content">
+          </div>
+        </div>
+        <!--------------------------------------phan sidebar---------------------->
+        <div class="sidebar">
+          <app-sidebar></app-sidebar>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

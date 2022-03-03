@@ -1,0 +1,37 @@
+<div class="wp-content pt-3 menu-news">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="main-content">
+          <div class="box mb-4 pb-2">
+            <h1 class="category-name px-3 py-1">Bài viết mới</h1>
+          </div>
+          <ul class="d-flex justify-content-between list-new-post">
+            <li *ngFor="let item of listTopPost">
+              <a [routerLink]="['/chi-tiet-bai-viet',item.id]">
+                <img class="thumb" src="{{item.thumb}}">
+                <div class="title">{{item.title}}</div>
+              </a>
+            </li>
+          </ul>
+          <!--------------------------danh sach bai dang --------------------------------------------->
+          <ul class="list-post">
+            <li *ngFor="let item of listPost">
+              <a [routerLink]="['/chi-tiet-bai-viet',item.id]" class="thumb">
+                <img src="{{item.thumb}}">
+              </a>
+              <div class="info-post">
+                <a [routerLink]="['/chi-tiet-bai-viet',item.id]" class="title">{{item.title}}</a>
+                <p class="auth">{{item.auth}}</p>
+                <p class="date-time">{{item.dateTime}}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
